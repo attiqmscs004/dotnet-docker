@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: attiqmscsdotnetdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: attiqmscsdotnetdocker
+  template:
+    metadata:
+      labels:
+        app: attiqmscsdotnetdocker 
+    spec:
+      containers:
+        - name: attiqmscsdotnetdocker 
+          image: aksveleroacr.azurecr.io/attiqmscsdotnetdocker
+          ports:
+          - containerPort: 80
